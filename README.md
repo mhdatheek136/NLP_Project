@@ -27,6 +27,7 @@ Sentiment analysis is a crucial NLP task, and this hybrid model seeks to boost p
 
 The hybrid model uses sentiment scores from both models as features to train a meta-classifier.
 
+---
 
 ## Prerequisites
 
