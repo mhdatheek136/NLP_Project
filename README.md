@@ -10,7 +10,6 @@ This project enhances sentiment analysis by combining two powerful models: **BER
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Directory Structure](#directory-structure)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -28,24 +27,6 @@ Sentiment analysis is a crucial NLP task, and this hybrid model seeks to boost p
 
 The hybrid model uses sentiment scores from both models as features to train a meta-classifier.
 
----
-
-## Directory Structure
-
-.
-├── BERT\_sentiment.ipynb           # Generate sentiment scores using BERT
-├── VADER\_sentiment.ipynb          # Generate sentiment scores using VADER
-├── data\_preprocessing.ipynb       # Clean and preprocess dataset
-├── target.ipynb                   # Create training labels from sentiment scores
-├── classifier.py                  # Logistic Regression training script
-├── random\_forest.ipynb            # Random Forest training and evaluation
-├── hybrid\_sentiment.ipynb         # Compare VADER, BERT, and Hybrid models
-├── hybrid\_function.ipynb          # Predict using trained hybrid model
-├── final\_model.joblib             # Saved Random Forest model
-├── research\_paper.pdf             # Research documentation
-└── README.md                      # Project readme
-
----
 
 ## Prerequisites
 
@@ -113,7 +94,7 @@ pip install transformers nltk scikit-learn pandas joblib
    * Logistic Regression:
 
      ```bash
-     Run: classifier.py
+     Open and run: classifier.ipynb
      ```
    * Random Forest (preferred):
 
