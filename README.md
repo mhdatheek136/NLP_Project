@@ -1,8 +1,14 @@
 # Hybrid Sentiment Analysis Model
 
-This project aims to enhance the efficiency of sentiment analysis by combining the BERT and VADER models to create a hybrid model. By leveraging the strengths of both models, the hybrid model aims to improve sentiment classification performance.
+This project enhances sentiment analysis by combining two powerful models: **BERT** and **VADER**. The hybrid approach leverages BERT’s deep contextual understanding with VADER’s rule-based efficiency to improve sentiment classification accuracy.
+
+> Two classifiers were tested: **Logistic Regression** and **Random Forest**.  
+> ✅ **Random Forest** provided better overall performance and is used in the final model.
+
+---
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Directory Structure](#directory-structure)
 - [Prerequisites](#prerequisites)
@@ -12,96 +18,157 @@ This project aims to enhance the efficiency of sentiment analysis by combining t
 - [Contributing](#contributing)
 - [License](#license)
 
+---
+
 ## Introduction
-The project combines BERT, a transformer-based model for natural language understanding, with VADER, a rule-based model for sentiment analysis. The hybrid model aims to improve sentiment analysis by leveraging the contextual understanding of BERT and the simplicity and efficiency of VADER.
+
+Sentiment analysis is a crucial NLP task, and this hybrid model seeks to boost performance by combining:
+- **BERT**: A transformer-based model from Hugging Face's `transformers` library for understanding deep language context.
+- **VADER**: A lexicon and rule-based sentiment analysis tool, ideal for social media and short texts.
+
+The hybrid model uses sentiment scores from both models as features to train a meta-classifier.
+
 
 ## Directory Structure
-```
+
+
 .
-├── BERT_sentiment.py
-├── VADER_sentiment.py
-├── data_preprocessing.py
-├── target.py
-├── classifier.py
-├── hybrid_sentiment.py
-├── hybrid_function.py
-├── final_model.joblib
-├── README.md
-└── research_paper.pdf
-```
-
-## Prerequisites
-- Python 3.x
-- Transformers library (Hugging Face)
-- NLTK
-- scikit-learn
-- joblib
-- pandas
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/hybrid-sentiment-analysis.git
-   cd hybrid-sentiment-analysis
-   ```
-
-2. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-1. Preprocess the dataset:
-   ```bash
-   python data_preprocessing.py
-   ```
-
-2. Generate BERT sentiment scores:
-   ```bash
-   python BERT_sentiment.py
-   ```
-
-3. Generate VADER sentiment scores:
-   ```bash
-   python VADER_sentiment.py
-   ```
-
-4. Create the training dataset:
-   ```bash
-   python target.py
-   ```
-
-5. Train the hybrid model:
-   ```bash
-   python classifier.py
-   ```
-
-6. Compare the models:
-   ```bash
-   python hybrid_sentiment.py
-   ```
-
-7. Test the hybrid function:
-   ```bash
-   python hybrid_function.py
-   ```
-
-## Files Overview
-- **BERT_sentiment.py**: Script to generate sentiment scores using the BERT model.
-- **VADER_sentiment.py**: Script to generate sentiment scores using the VADER model.
-- **data_preprocessing.py**: Script for preprocessing the dataset from Kaggle.
-- **target.py**: Script to create the training dataset combining BERT and VADER scores.
-- **classifier.py**: Script for training the hybrid sentiment analysis model.
-- **hybrid_sentiment.py**: Script to compare the performance of BERT, VADER, and the hybrid model.
-- **hybrid_function.py**: Script to test the hybrid function using the trained model (`final_model.joblib`).
-
-## Contributing
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+├── BERT\_sentiment.ipynb           # Generate sentiment scores using BERT
+├── VADER\_sentiment.ipynb          # Generate sentiment scores using VADER
+├── data\_preprocessing.ipynb       # Clean and preprocess dataset
+├── target.ipynb                   # Create training labels from sentiment scores
+├── classifier.py                  # Logistic Regression training script
+├── random\_forest.ipynb            # Random Forest training and evaluation
+├── hybrid\_sentiment.ipynb         # Compare VADER, BERT, and Hybrid models
+├── hybrid\_function.ipynb          # Predict using trained hybrid model
+├── final\_model.joblib             # Saved Random Forest model
+├── research\_paper.pdf             # Research documentation
+└── README.md                      # Project readme
 
 ---
+
+## Prerequisites
+
+- Python 3.x
+- Hugging Face Transformers
+- NLTK
+- Scikit-learn
+- Pandas
+- Joblib
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/mhdatheek136/NLP_Project.git
+cd NLP_Project
+````
+
+2. Install required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+If `requirements.txt` is missing, manually install:
+
+```bash
+pip install transformers nltk scikit-learn pandas joblib
+```
+
+---
+
+## Usage
+
+1. **Preprocess the dataset**
+
+   ```bash
+   Open and run: data_preprocessing.ipynb
+   ```
+
+2. **Generate sentiment scores**
+
+   * BERT:
+
+     ```bash
+     Open and run: BERT_sentiment.ipynb
+     ```
+   * VADER:
+
+     ```bash
+     Open and run: VADER_sentiment.ipynb
+     ```
+
+3. **Create training dataset**
+
+   ```bash
+   Open and run: target.ipynb
+   ```
+
+4. **Train classifiers**
+
+   * Logistic Regression:
+
+     ```bash
+     Run: classifier.py
+     ```
+   * Random Forest (preferred):
+
+     ```bash
+     Open and run: random_forest.ipynb
+     ```
+
+5. **Compare model performance**
+
+   ```bash
+   Open and run: hybrid_sentiment.ipynb
+   ```
+
+6. **Predict sentiment using the trained hybrid model**
+
+   ```bash
+   Open and run: hybrid_function.ipynb
+   ```
+
+---
+
+## Files Overview
+
+| File                       | Description                              |
+| -------------------------- | ---------------------------------------- |
+| `BERT_sentiment.ipynb`     | Generate sentiment using BERT            |
+| `VADER_sentiment.ipynb`    | Generate sentiment using VADER           |
+| `data_preprocessing.ipynb` | Clean and prepare dataset                |
+| `target.ipynb`             | Create combined target features          |
+| `classifier.py`            | Train Logistic Regression                |
+| `random_forest.ipynb`      | Train and evaluate Random Forest model   |
+| `hybrid_sentiment.ipynb`   | Model comparison and analysis            |
+| `hybrid_function.ipynb`    | Final testing using `final_model.joblib` |
+| `final_model.joblib`       | Trained Random Forest classifier         |
+| `research_paper.pdf`       | Methodology and background               |
+
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to fork the repository, create a branch, and submit a pull request. Refer to the [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+```
+
+---
+
+Let me know if you'd like to add sections like sample predictions, accuracy charts, Hugging Face model links, or an API interface!
+```
+
 
 For more details, refer to the accompanying research paper (`research_paper.pdf`). If you encounter any issues or have any questions, please open an issue in the repository or contact the project maintainers.
 
