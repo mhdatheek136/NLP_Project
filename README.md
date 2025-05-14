@@ -3,7 +3,7 @@
 This project enhances sentiment analysis by combining two powerful models: **BERT** and **VADER**. The hybrid approach leverages BERT’s deep contextual understanding with VADER’s rule-based efficiency to improve sentiment classification accuracy.
 
 > Two classifiers were tested: **Logistic Regression** and **Random Forest**.  
-> ✅ **Random Forest** provided better overall performance and is used in the final model.
+> **Random Forest** provided better overall performance and is used in the final model.
 
 ---
 
