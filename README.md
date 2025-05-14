@@ -1,4 +1,3 @@
-```markdown
 # Hybrid Sentiment Analysis Model
 
 This project enhances sentiment analysis by combining two powerful models: **BERT** and **VADER**. The hybrid approach leverages BERT’s deep contextual understanding with VADER’s rule-based efficiency to improve sentiment classification accuracy.
@@ -33,8 +32,6 @@ The hybrid model uses sentiment scores from both models as features to train a m
 
 ## Directory Structure
 
-```
-
 .
 ├── BERT\_sentiment.ipynb           # Generate sentiment scores using BERT
 ├── VADER\_sentiment.ipynb          # Generate sentiment scores using VADER
@@ -47,8 +44,6 @@ The hybrid model uses sentiment scores from both models as features to train a m
 ├── final\_model.joblib             # Saved Random Forest model
 ├── research\_paper.pdf             # Research documentation
 └── README.md                      # Project readme
-
-````
 
 ---
 
@@ -167,14 +162,7 @@ Contributions are welcome! Please feel free to fork the repository, create a bra
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-```
-
----
-
-Let me know if you'd like to add sections like sample predictions, accuracy charts, Hugging Face model links, or an API interface!
-```
-
-
+``
 
 For more details, refer to the accompanying research paper (`research_paper.pdf`). If you encounter any issues or have any questions, please open an issue in the repository or contact the project maintainers.
 
